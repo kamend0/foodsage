@@ -1,27 +1,30 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Title:</strong>
-    <%= recipe.title %>
-  </p>
+  <h1><%= recipe.title %></h1>
+  <hr>
+  <div id="recipe-body" class="pt-4">
+    <div class="row">
+      <div class="col">
+          <h3>Description</h3>
+          <%= simple_format(recipe.description) %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
+          Makes <strong><%= recipe.servings %></strong> servings.
 
-  <p>
-    <strong>Servings:</strong>
-    <%= recipe.servings %>
-  </p>
+          <strong>Instructions:</strong>
+          <%= recipe.instructions %>
 
-  <p>
-    <strong>Instructions:</strong>
-    <%= recipe.instructions %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= recipe.notes %>
-  </p>
-
+          <strong>Notes:</strong>
+          <%= recipe.notes %>
+      </div>
+      <div class="col">
+        <div class="sticky-top" style="top: 3em">
+          <h3>Ingredients</h3>
+          <ul>
+            <% recipe.ingredients.each do |i| %>
+              <li><%= i.quantity %> <%= i.measure %> <%= i.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

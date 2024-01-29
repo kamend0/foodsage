@@ -3,12 +3,11 @@
 <h1>Recipes</h1>
 
 <div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
-  <% end %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to recipe.title, recipe %></li>
+    <% end %>
+  </ul>
 </div>
 
 <%= link_to "New recipe", new_recipe_path %>

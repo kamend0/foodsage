@@ -28,6 +28,15 @@
     <%= form.text_field :servings %>
   </div>
 
+  <div id="ingredients">
+    <%= form.fields_for :ingredients do |ingredient_form| %>
+      <%= render "ingredient_fields", f: ingredient_form %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Ingredient', form, :ingredients %>
+    </div>
+  </div>
+
   <div>
     <%= form.label :instructions, style: "display: block" %>
     <%= form.text_area :instructions %>
