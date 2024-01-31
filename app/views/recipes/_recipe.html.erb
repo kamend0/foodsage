@@ -1,22 +1,29 @@
 <div id="<%= dom_id recipe %>">
   <h1><%= recipe.title %></h1>
   <hr>
-  <div id="recipe-body" class="pt-4">
+  <div id="recipe-body">
     <div class="row">
       <div class="col">
+        <div id="description" class="my-4">
           <h3>Description</h3>
           <%= simple_format(recipe.description) %>
+          <i>Makes <strong><%= recipe.servings %></strong> servings.</i><br>
+        </div>
 
-          Makes <strong><%= recipe.servings %></strong> servings.
+        <div id="instructions" class="my-4">
+          <h3>Instructions</h3>
+          <%= simple_format(recipe.instructions) %>
+        </div>
 
-          <strong>Instructions:</strong>
-          <%= recipe.instructions %>
-
-          <strong>Notes:</strong>
-          <%= recipe.notes %>
+        <% if recipe.notes.present? %>
+          <div id="notes" class="my-4">
+            <h3>Notes</h3>
+            <%= recipe.notes %>
+          </div>
+        <% end %>
       </div>
       <div class="col">
-        <div class="sticky-top" style="top: 3em">
+        <div id="ingedients" class="sticky-top my-4" style="top: 3em">
           <h3>Ingredients</h3>
           <ul>
             <% recipe.ingredients.each do |i| %>

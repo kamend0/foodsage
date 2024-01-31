@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   devise_for :users
-  root "recipes#index"
+  root "pages#home"
 
   resources :recipes do
     resources :ingredients
