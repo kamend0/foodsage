@@ -1,4 +1,8 @@
-body {
+#sitewide-body {
     background: #fbf4f2;
     color: #202d34;
+}
+
+#sitewide-navbar {
+    background: #a2ad91;
 }
