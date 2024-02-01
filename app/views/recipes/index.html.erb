@@ -1,10 +1,7 @@
 <h1>Your Recipe Shelf</h1>
+<hr>
 
-<div id="recipe-control-panel" class="mb-2">
-  <%= link_to "New recipe", new_recipe_path %>
-</div>
-
-<div id="recipes">
+<div id="recipes" class="my-4">
   <% if current_user.recipes.any? %>
     <ul>
       <% current_user.recipes.each do |recipe| %>
@@ -16,13 +13,6 @@
   <% end %>
 </div>
 
-<div id="user-control-panel">
-  <br>
-  <% if user_signed_in? %>
-    <%= link_to "Profile", edit_user_registration_path %><br>
-    <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Login", new_user_session_path %><br>
-    <%= link_to "Sign Up", new_user_registration_path %>
-  <% end %>
+<div id="recipe-control-panel" class="my-4">
+  <%= link_to "Add a new recipe...", new_recipe_path %>
 </div>
