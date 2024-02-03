@@ -15,8 +15,10 @@
 
   <div>
     <% if recipe.cover_image.present? %>
-      <%= image_tag recipe.cover_image, {class: "img-fluid", style: "max-width: 20%;"} %><br>
-      <%= link_to "Remove image", recipe_cover_image_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <div id="<%= dom_id(recipe, :cover_image) %>">
+        <%= image_tag recipe.cover_image, {class: "img-fluid", style: "max-width: 20%;"} %><br>
+        <%= link_to "Remove image", recipe_cover_image_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
     <% end %>
     <%= form.file_field :cover_image %>
   </div>
