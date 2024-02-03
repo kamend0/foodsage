@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :ingredients
+    resources :cover_image, only: [:destroy], module: :recipes
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
