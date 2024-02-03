@@ -14,6 +14,13 @@
   <% end %>
 
   <div>
+    <% if recipe.cover_image.present? %>
+      <%= image_tag recipe.cover_image, {class: "img-fluid", style: "max-width: 20%;"} %><br>
+    <% end %>
+    <%= form.file_field :cover_image %>
+  </div>
+
+  <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>

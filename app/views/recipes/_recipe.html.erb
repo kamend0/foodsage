@@ -2,8 +2,10 @@
   <h1><%= recipe.title %></h1>
   <hr>
   <div id="recipe-body">
-    <div class="row">
-      <div class="col">
+    <div class="row"> <%# Only one row %>
+      <div class="col-7">
+        <%= image_tag recipe.cover_image, {class: "img-fluid my-4"} if recipe.cover_image.present? %>
+
         <div id="description" class="my-4">
           <h3>Description</h3>
           <%= simple_format(recipe.description) %>
@@ -22,7 +24,7 @@
           </div>
         <% end %>
       </div>
-      <div class="col">
+      <div class="col-5">
         <div id="ingedients" class="sticky-top my-4" style="top: 3em">
           <h3>Ingredients</h3>
           <ul>
