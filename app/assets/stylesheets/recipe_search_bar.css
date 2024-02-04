@@ -1,0 +1,18 @@
+@import url("color_palette.css");
+
+
+#recipe-search-bar {
+    max-width: 60%;
+
+    #q {
+        box-shadow: none;
+    }
+
+    #q:focus {
+        border-color: var(--primary_color);
+    }
+}
+
+#recipe-search p {
+    font-size: 80%;
+}

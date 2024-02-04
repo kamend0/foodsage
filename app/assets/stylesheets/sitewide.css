@@ -1,0 +1,11 @@
+@import url("color_palette.css");
+
+
+#sitewide-body {
+    background: var(--background_color);
+    color: var(--font-color);
+}
+
+#sitewide-navbar {
+    background: var(--primary_color);
+}
