@@ -1,15 +1,37 @@
 <h1>Your Recipe Shelf</h1>
 <hr>
 
+<% if current_user.recipes.any? %>
+  <div id="recipe-search my-4">
+    <%= form_tag recipes_path, { method: :get, class: "input-group", style: "max-width: 60%;" } do %>
+      <%= text_field_tag :q, params[:q], { class: "form-control", placeholder: "Search..." } %>
+      <%= submit_tag "Search", { class: "btn btn-outline-dark" } %>
+    <% end %>
+    <p><i>
+      To search by ingredients, separate ingredient names by commas.<br>
+      To search for one, just end in a comma, e.g.: "rice,"
+    </i></p>
+  </div>
+<% else %>
+  <p class="m-0">No recipes yet - add one now!</p>
+<% end %>
+
 <div id="recipes" class="my-4">
-  <% if current_user.recipes.any? %>
-    <ul>
-      <% current_user.recipes.each do |recipe| %>
-        <li><%= link_to recipe.title, recipe %></li>
-      <% end %>
-    </ul>
+  <% unless current_user.recipes.none? %>
+    <% if @recipes.any? %>
+      <ul>
+        <% @recipes.each do |recipe| %>
+          <li><%= link_to recipe.title, recipe %></li>
+        <% end %>
+      </ul>
+    <% elsif params[:q].present? %>
+      <p>No recipes found. :-(</p>
+      <%= link_to "Back to all recipes...", recipes_path %>
+    <% else %>
+      <p>How did you get here? Let me know... kollin@hey.com</p>
+    <% end %>
   <% else %>
-    <p class="m-0">No recipes yet - add one now!</p>
+    <p>You don't have any recipes yet - add one now!</p>
   <% end %>
 </div>
 

@@ -7,5 +7,16 @@ class Recipe < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates :servings, presence: true
-    validates :instructions, presence: true    
+    validates :instructions, presence: true
+
+    # def self.search_by_ingredients(user, ingredient_names)
+    #     ingredients = ingredient_names.split(',').map(&:strip)
+
+    #     subquery = Ingredient.where('lower(name) in (?)', ingredients.map(&:downcase))
+    #                    .select(:recipe_id)
+    #                    .group(:recipe_id)
+    #                    .having('COUNT(recipe_id) = ?', ingredients.size)
+        
+    #     joins(:ingredients).merge(subquery)
+    # end
 end

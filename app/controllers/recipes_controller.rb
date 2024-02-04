@@ -4,7 +4,23 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = current_user.recipes.all
+    if params[:q].present?
+      if params[:q].include? ","  # Ingredient search
+        # Recipe.search_by_ingredients(current_user, params[:q])
+        ingredients = params[:q].split(',').map(&:strip)
+        @recipes = current_user.recipes.joins(:ingredients)
+                               .where(ingredients.map { |ingredient| '"ingredients"."name" LIKE ?' }.join(' OR '),
+                                      *ingredients.map { |ingredient| "%#{ingredient.downcase}%" })
+                               .group('recipes.id')
+                               .having('COUNT(recipes.id) = ?', ingredients.size)
+
+        @recipes = @recipes.includes(:ingredients)  # Eager load to avoid N+1 queries
+      else
+        @recipes = current_user.recipes.where('lower(title) LIKE ?', "%#{params[:q].downcase}%")
+      end
+    else
+      @recipes = current_user.recipes.all
+    end
   end
 
   # GET /recipes/1 or /recipes/1.json
