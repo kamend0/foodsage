@@ -1,0 +1,9 @@
+<div id="recipe-search" class="my-4">
+    <%= form_tag recipes_path, { id: "recipe-search-bar", method: :get, class: "input-group mb-1" } do %>
+        <%= text_field_tag :q, params[:q], { class: "form-control", placeholder: "Try \"steak\", or \"parmesan, spaghetti\"" } %>
+        <%= submit_tag "Search", { class: "btn btn-outline-dark" } %>
+    <% end %>
+    <p class="mt-1"><i>
+        To search by ingredients, just use commas. To search for just one, end with a comma. E.g. "rice,"
+    </i></p>
+</div>

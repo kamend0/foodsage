@@ -2,16 +2,7 @@
 <hr>
 
 <% if current_user.recipes.any? %>
-  <div id="recipe-search my-4">
-    <%= form_tag recipes_path, { method: :get, class: "input-group", style: "max-width: 60%;" } do %>
-      <%= text_field_tag :q, params[:q], { class: "form-control", placeholder: "Search..." } %>
-      <%= submit_tag "Search", { class: "btn btn-outline-dark" } %>
-    <% end %>
-    <p><i>
-      To search by ingredients, separate ingredient names by commas.<br>
-      To search for one, just end in a comma, e.g.: "rice,"
-    </i></p>
-  </div>
+  <%= render "search_bar" %>
 <% else %>
   <p class="m-0">No recipes yet - add one now!</p>
 <% end %>
