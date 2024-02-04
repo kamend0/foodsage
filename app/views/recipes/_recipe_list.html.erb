@@ -1,0 +1,17 @@
+<div id="recipe-list" class="my-4">
+  <% unless current_user.recipes.none? %>
+    <% if recipes.any? %>
+      <ul>
+        <% recipes.each do |recipe| %>
+          <li><%= link_to recipe.title, recipe %></li>
+        <% end %>
+      </ul>
+    <% elsif params[:q].present? %>
+      <p>No recipes found. :-(</p>
+    <% else %>
+      <p>How did you get here? Let me know... kollin@hey.com</p>
+    <% end %>
+  <% else %>
+    <p>You don't have any recipes yet - add one now!</p>
+  <% end %>
+</div>
