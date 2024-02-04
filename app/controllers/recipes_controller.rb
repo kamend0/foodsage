@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    if params[:q].present?
+    if params[:q].present? && !params[:q].empty?
       if params[:q].include? ","  # Ingredient search
         # Recipe.search_by_ingredients(current_user, params[:q])
         ingredients = params[:q].split(',').map(&:strip)
