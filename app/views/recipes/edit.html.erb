@@ -1,10 +1,12 @@
-<h1>Editing recipe</h1>
+<div class="display-6">Editing: <%= @recipe.title %></div>
+<hr>
+
 
 <%= render "form", recipe: @recipe %>
 
 <br>
 
 <div>
-  <%= link_to "Show this recipe", @recipe %> |
-  <%= link_to "Back to recipes", recipes_path %>
+  <%= link_to "Discard Changes and Go Back", @recipe %><br>
+  <%= link_to "<< Back to recipes", recipes_path %>
 </div>

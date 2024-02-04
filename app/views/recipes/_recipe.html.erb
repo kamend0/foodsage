@@ -1,10 +1,8 @@
-<div id="<%= dom_id recipe %>">
-  <h1><%= recipe.title %></h1>
-  <hr>
-  <div id="recipe-body">
+<div id="recipe">
+  <div id="recipe-body" class="my-4">
     <div class="row"> <%# Only one row %>
       <div class="col-7">
-        <%= image_tag recipe.cover_image, {class: "img-fluid my-4", style: "max-width: 80%;"} if recipe.cover_image.present? %>
+        <%= image_tag recipe.cover_image, {class: "img-fluid mb-4", style: "max-width: 80%;"} if recipe.cover_image.present? %>
 
         <div id="description" class="my-4">
           <h3>Description</h3>
@@ -25,7 +23,7 @@
         <% end %>
       </div>
       <div class="col-5">
-        <div id="ingedients" class="sticky-top my-4" style="top: 3em">
+        <div id="ingedients" class="sticky-top my-4" style="top: 5%;">
           <h3>Ingredients</h3>
           <ul>
             <% recipe.ingredients.each do |i| %>
