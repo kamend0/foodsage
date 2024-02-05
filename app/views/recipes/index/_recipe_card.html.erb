@@ -1,0 +1,8 @@
+<div class="card m-1">
+    <%= image_tag(recipe.cover_image.attached? ? recipe.cover_image : "img_default.jpeg", class: "card-img-top") %>
+    <div class="card-body">
+        <h6 class="card-title" style="font-size: 14px;"><%= truncate(recipe.title, :length => 50) %></h6>
+        <p class="card-text" style="font-size: 11px;"><i><%= truncate(recipe.description, :length => 40) %></i></p>
+        <%= link_to "", recipe_path(recipe), { class: "stretched-link" } %>
+    </div>
+</div>

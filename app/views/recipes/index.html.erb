@@ -2,12 +2,12 @@
 <hr>
 
 <% if current_user.recipes.any? %>
-  <%= render "search_bar" %>
+  <%= render "recipes/index/search_bar" %>
 <% else %>
   <p class="m-0">No recipes yet - add one now!</p>
 <% end %>
 
-<%= render "recipe_list", recipes: @recipes %>
+<%= render "recipes/index/recipe_list", recipes: @recipes %>
 
 <div id="recipe-control-panel" class="my-4">
   <%= link_to "Add a new recipe", new_recipe_path %>

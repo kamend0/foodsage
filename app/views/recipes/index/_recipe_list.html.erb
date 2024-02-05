@@ -1,11 +1,7 @@
 <div id="recipe-list" class="my-4">
   <% unless current_user.recipes.none? %>
     <% if recipes.any? %>
-      <ul>
-        <% recipes.each do |recipe| %>
-          <li><%= link_to recipe.title, recipe %></li>
-        <% end %>
-      </ul>
+      <%= render "recipes/index/recipe_card_container", recipes: recipes %>
     <% elsif params[:q].present? %>
       <p>No recipes found. :-(</p>
     <% else %>
