@@ -1,11 +1,11 @@
 <div class="container my-4 p-0" id="recipe-card-list">
-    <% recipes.each_slice(3) do |recipe_batch| %>
-    <div class="row p-0 m-n2">
-        <% recipe_batch.each do |recipe| %>
-        <div class="col-4 w-25 g-0 m-2">
-            <%= render 'recipes/index/recipe_card', recipe: recipe %>
+    <% recipes.each_slice(5) do |recipe_batch| %>
+        <div class="row p-0 m-n2">
+            <% recipe_batch.each do |recipe| %>
+                <div class="col-2 w-20 g-0 m-2">
+                    <%= render 'recipes/index/recipe_card', recipe: recipe %>
+                </div>
+            <% end %>
         </div>
-        <% end %>
-    </div>
     <% end %>
 </div>
