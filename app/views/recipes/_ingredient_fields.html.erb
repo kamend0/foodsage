@@ -1,12 +1,25 @@
-<div class="nested-fields">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :quantity %>
-  <%= f.number_field :quantity %>
-
-  <%= f.label :measure %>
-  <%= f.text_field :measure %>
-
-  <%= link_to_remove_association "Delete", f %>
+<div class="nested-fields my-2">
+  <div class="row">
+    <div class="col-10">  <%# Holds ingredient fields %>
+      <div class="row">
+        <div class="col-4 w-25">
+          <div class="row"><%= f.label :quantity %></div>
+          <div class="row"><%= f.number_field :quantity %></div>
+        </div>
+        <div class="col-4 w-25">
+          <div class="row"><%= f.label :measure %></div>
+          <div class="row"><%= f.text_field :measure %></div>
+        </div>
+        <div class="col-4 w-50">
+          <div class="row"><%= f.label :name %></div>
+          <div class="row"><%= f.text_field :name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 d-flex flex-column">  <%# Holds only Delete button %>
+      <div class="row mt-auto">
+        <%= link_to_remove_association "Delete", f, { class: "btn btn-outline-danger mx-1 p-1" } %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-<div id="recipe-form" class="my-4">
+<div id="recipe-form" class="my-4 w-50">
   <%= form_with(model: recipe) do |form| %>
     <% if recipe.errors.any? %>
       <div style="color: red">
@@ -12,7 +12,7 @@
       </div>
     <% end %>
 
-    <div>
+    <div id="form-image" class="my-4">
       <% if recipe.cover_image.present? %>
         <div id="<%= dom_id(recipe, :cover_image) %>">
           <%= image_tag recipe.cover_image, {class: "img-fluid", style: "max-width: 20%;"} %><br>
@@ -22,42 +22,45 @@
       <%= form.file_field :cover_image %>
     </div>
 
-    <div>
-      <%= form.label :title, style: "display: block" %>
-      <%= form.text_field :title %>
+    <div id="form-title" class="my-4">
+      <%= form.label :title, { style: "display: block" } %>
+      <%= form.text_field :title, { class: "form-control" } %>
     </div>
 
-    <div>
-      <%= form.label :description, style: "display: block" %>
-      <%= form.text_area :description %>
+    <div id="form-description" class="my-4">
+      <%= form.label :description, { style: "display: block" } %>
+      <%= form.text_area :description, { class: "form-control" } %>
     </div>
 
-    <div>
-      <%= form.label :servings, style: "display: block" %>
-      <%= form.text_field :servings %>
+    <div id="form-servings" class="my-4 w-25">
+      <%= form.label :servings, { style: "display: block" } %>
+      <%= form.text_field :servings, { class: "form-control" } %>
     </div>
 
-    <div id="ingredients">
-      <%= form.fields_for :ingredients do |ingredient_form| %>
-        <%= render "ingredient_fields", f: ingredient_form %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association 'Add Ingredient', form, :ingredients %>
+    <div id="form-ingredients" class="my-4">
+      <div id="ingredient-container" class="container">
+        <%= form.label :ingredients, style: "display:block" %>
+        <%= form.fields_for :ingredients do |ingredient_form| %>
+          <%= render "ingredient_fields", f: ingredient_form %>
+        <% end %>
+        <div id="links">
+          <%= link_to_add_association 'Add Ingredient', form, :ingredients, { class: "btn btn-outline-success" } %>
+        </div>
       </div>
     </div>
 
-    <div>
-      <%= form.label :instructions, style: "display: block" %>
-      <%= form.text_area :instructions %>
+    <div id="form-instructions" class="my-4">
+      <%= form.label :instructions, { style: "display: block" } %>
+      <%= form.text_area :instructions, { class: "form-control" } %>
     </div>
 
-    <div>
-      <%= form.label :notes, style: "display: block" %>
-      <%= form.text_area :notes %>
+    <div id="form-notes" class="my-4">
+      <%= form.label :notes, { style: "display: block" } %>
+      <%= form.text_area :notes, { class: "form-control" } %>
     </div>
 
-    <div>
-      <%= form.submit %>
+    <div id="form-submit" class="my-4">
+      <%= form.submit class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

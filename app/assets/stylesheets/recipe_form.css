@@ -1,0 +1,14 @@
+@import url("color_palette.css");
+
+#recipe-form .form-control {
+    box-shadow: none;
+}
+
+#recipe-form .form-control:focus {
+    border-color: var(--primary_color);
+}
+
+#recipe-form #links {
+    margin-left: -0.75rem;
+    /* margin-left: -12px; */
+}
