@@ -1,17 +1,18 @@
+<% first_row = false unless local_assigns.has_key?(:first_row) %> <%# Necessary when using cocoon %>
 <div class="nested-fields my-2">
   <div class="row">
     <div class="col-10">  <%# Holds ingredient fields %>
       <div class="row">
         <div class="col-4 w-25">
-          <div class="row"><%= f.label :quantity %></div>
+          <% if first_row %><div class="row"><%= f.label :quantity %></div><% end %>
           <div class="row"><%= f.number_field :quantity %></div>
         </div>
         <div class="col-4 w-25">
-          <div class="row"><%= f.label :measure %></div>
+          <% if first_row %><div class="row"><%= f.label :measure %></div><% end %>
           <div class="row"><%= f.text_field :measure %></div>
         </div>
         <div class="col-4 w-50">
-          <div class="row"><%= f.label :name %></div>
+          <% if first_row %><div class="row"><%= f.label :name %></div><% end %>
           <div class="row"><%= f.text_field :name %></div>
         </div>
       </div>
