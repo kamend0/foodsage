@@ -5,15 +5,15 @@
       <div class="row">
         <div class="col-4 w-25">
           <% if first_row %><div class="row"><%= f.label :quantity %></div><% end %>
-          <div class="row"><%= f.number_field :quantity %></div>
+          <div class="row"><%= f.number_field :quantity, placeholder: "64" %></div>
         </div>
         <div class="col-4 w-25">
           <% if first_row %><div class="row"><%= f.label :measure %></div><% end %>
-          <div class="row"><%= f.text_field :measure %></div>
+          <div class="row"><%= f.text_field :measure, placeholder: "grams" %></div>
         </div>
         <div class="col-4 w-50">
           <% if first_row %><div class="row"><%= f.label :name %></div><% end %>
-          <div class="row"><%= f.text_field :name %></div>
+          <div class="row"><%= f.text_field :name, placeholder: "rice" %></div>
         </div>
       </div>
     </div>

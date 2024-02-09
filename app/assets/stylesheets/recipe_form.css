@@ -8,7 +8,12 @@
     border-color: var(--primary_color);
 }
 
+
+
 #recipe-form #links {
     margin-left: -0.75rem;
-    /* margin-left: -12px; */
+}
+
+#recipe-form #ingredient-section-label {
+    margin-left: -0.75em;
 }
