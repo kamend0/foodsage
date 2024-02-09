@@ -2,8 +2,6 @@
 
 
 #recipe-search-bar {
-    max-width: 60%;
-
     #q {
         box-shadow: none;
     }
@@ -13,6 +11,6 @@
     }
 }
 
-#recipe-search p {
+#recipe-search-bar p {
     font-size: 80%;
 }
