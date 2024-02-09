@@ -44,7 +44,7 @@
           <%= render "ingredient_fields", f: ingredient_form %>
         <% end %>
         <div id="links">
-          <%= link_to_add_association 'Add Ingredient', form, :ingredients, { class: "btn btn-outline-success" } %>
+          <%= link_to_add_association 'Add Ingredient', form, :ingredients, { id: "btn-outline-sage", class: "btn" } %>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
     </div>
 
     <div id="form-submit" class="my-4">
-      <%= form.submit class: "btn btn-primary" %>
+      <%= form.submit class: "btn", id: "btn-primary-sage" %>
     </div>
   <% end %>
 </div>

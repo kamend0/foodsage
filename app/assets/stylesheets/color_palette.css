@@ -4,5 +4,6 @@
     --accent_color: #572365;
     --secondary_accent_color: #008080;
     --background_color: #fbf4f2;
-    --font-color: #202d34;
+    --font_color: #0d0f0b; /* primary to HSLA -> increase L to 5% */
+    --font_color_light: #f3f4f0; /* primary to HSLA -> increase L to 95% */
 }

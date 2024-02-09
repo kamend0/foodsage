@@ -9,3 +9,15 @@
 #sitewide-navbar {
     background: var(--primary_color);
 }
+
+#btn-primary-sage {
+    background-color: var(--secondary_color);
+    border-color: var(--secondary_color);
+    color: var(--font_color_light);
+    font-weight: bold;
+}
+
+#btn-outline-sage {
+    border-color: var(--secondary_color);
+    color: var(--secondary_color);
+}
