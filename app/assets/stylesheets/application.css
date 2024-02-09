@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- 
-@import url("color_palette.css");
-@import url("recipe_search_bar.css");
