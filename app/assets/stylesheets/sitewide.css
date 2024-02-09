@@ -29,3 +29,15 @@
     border-color: var(--secondary_color);
     color: var(--secondary_color);
 }
+
+#btn-primary-accent {
+    background-color: var(--accent_color);
+    border-color: var(--accent_color);
+    color: var(--font_color_light);
+    font-weight: bold;
+}
+
+#btn-outline-accent {
+    border-color: var(--accent_color);
+    color: var(--accent_color);
+}

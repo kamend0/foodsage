@@ -1,0 +1,33 @@
+<% utilities = ["back"] unless defined?(utilities) && utilities.is_a?(Array) %>
+
+<div id="utility-panel" class="sticky-top my-4" style="top: 10%;">
+    <div id="utility-panel-controls" class="d-flex flex-column w-50">
+        <%= link_to "<< Back to all recipes",
+                    recipes_path,
+                    id: "btn-outline-accent",
+                    class: "btn" if utilities.include?("back") %>
+        <% if defined?(recipe) %>
+            <%= link_to "Edit this recipe",
+                        edit_recipe_path(recipe),
+                        id: "btn-primary-accent",
+                        class: "btn my-4" if utilities.include?("edit") %>
+            <%= link_to "Discard Changes",
+                        recipe,
+                        id: "btn-primary-accent",
+                        class: "btn my-4" if utilities.include?("discard") %>
+        <% end %>
+    </div>
+
+    <% if defined?(recipe) %>
+        <% if utilities.include?("ingredients") %>
+            <div id="utility-panel-ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                <% recipe.ingredients.each do |i| %>
+                    <li><%= i.quantity %> <%= i.measure %> <%= i.name %></li>
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+    <% end %>
+</div>

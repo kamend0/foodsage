@@ -1,19 +1,6 @@
 <div class="display-6"><%= @recipe.title %></div>
 <hr>
 
-<%= render @recipe %>
-
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %><br>
-  <%= link_to "<< Back to all recipes", recipes_path %>
-
-  <%= 
-    button_to "Delete this recipe",
-    @recipe,
-    {
-      method: :delete,
-      class: "btn btn-outline-danger",
-      data: { turbo_confirm: "Are you sure you want to delete this recipe?" }
-    }
-  %>
+<div id="show-recipe-body" class="my-4">
+    <%= render @recipe %>
 </div>

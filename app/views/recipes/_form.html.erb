@@ -1,4 +1,4 @@
-<div id="recipe-form" class="my-4 w-50">
+<div id="recipe-form">
   <%= form_with(model: recipe) do |form| %>
     <% if recipe.errors.any? %>
       <div style="color: red">
@@ -12,7 +12,7 @@
       </div>
     <% end %>
 
-    <div id="form-image" class="my-4">
+    <div id="form-image" class="mb-4">
       <% if recipe.cover_image.present? %>
         <div id="<%= dom_id(recipe, :cover_image) %>">
           <%= image_tag recipe.cover_image, {class: "img-fluid", style: "max-width: 20%;"} %><br>

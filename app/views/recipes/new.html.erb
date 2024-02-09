@@ -1,10 +1,12 @@
 <div class="display-6">New recipe</div>
 <hr>
 
-<%= render "form", recipe: @recipe %>
-
-<br>
-
-<div>
-  <%= link_to "<< Back to recipes", recipes_path %>
+<div id="new-recipe-body" class="my-4">
+  <div class="row">
+    <div class="col-7">
+      <%= render "form", recipe: @recipe %>
+    </div>
+    <div class="col-5">
+      <%= render "utility_panel" %>
+    </div>
 </div>

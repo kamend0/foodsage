@@ -1,37 +1,28 @@
 <div id="recipe">
-  <div id="recipe-body" class="my-4">
-    <div class="row"> <%# Only one row %>
-      <div class="col-7">
-        <%= image_tag recipe.cover_image, {class: "img-fluid mb-4", style: "max-width: 70%;"} if recipe.cover_image.present? %>
+  <div class="row"> <%# Only one row %>
+    <div class="col-7">
+      <%= image_tag recipe.cover_image, {class: "img-fluid mb-4", style: "max-width: 70%;"} if recipe.cover_image.present? %>
 
-        <div id="description" class="my-4">
-          <h3>Description</h3>
-          <%= simple_format(recipe.description) %>
-          <i>Makes <strong><%= recipe.servings %></strong> servings.</i><br>
-        </div>
-
-        <div id="instructions" class="my-4">
-          <h3>Instructions</h3>
-          <%= simple_format(recipe.instructions) %>
-        </div>
-
-        <% if recipe.notes.present? %>
-          <div id="notes" class="my-4">
-            <h3>Notes</h3>
-            <%= recipe.notes %>
-          </div>
-        <% end %>
+      <div id="description" class="my-4">
+        <h3>Description</h3>
+        <%= simple_format(recipe.description) %>
+        <i>Makes <strong><%= recipe.servings %></strong> servings.</i><br>
       </div>
-      <div class="col-5">
-        <div id="ingedients" class="sticky-top my-4" style="top: 14%;">
-          <h3>Ingredients</h3>
-          <ul>
-            <% recipe.ingredients.each do |i| %>
-              <li><%= i.quantity %> <%= i.measure %> <%= i.name %></li>
-            <% end %>
-          </ul>
-        </div>
+
+      <div id="instructions" class="my-4">
+        <h3>Instructions</h3>
+        <%= simple_format(recipe.instructions) %>
       </div>
+
+      <% if recipe.notes.present? %>
+        <div id="notes" class="my-4">
+          <h3>Notes</h3>
+          <%= recipe.notes %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-5">
+      <%= render "utility_panel", recipe: recipe, utilities: ["back", "edit", "ingredients"] %>
     </div>
   </div>
 </div>
