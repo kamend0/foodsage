@@ -1,5 +1,5 @@
 <% first_row = false unless local_assigns.has_key?(:first_row) %> <%# Necessary when using cocoon %>
-<div class="nested-fields my-2">
+<div id="ingredient-fields" class="nested-fields my-2">
   <div class="row">
     <div class="col-10">  <%# Holds ingredient fields %>
       <div class="row">
@@ -17,9 +17,9 @@
         </div>
       </div>
     </div>
-    <div class="col-2 d-flex flex-column">  <%# Holds only Delete button %>
-      <div class="row mt-auto">
-        <%= link_to_remove_association "Delete", f, { class: "btn btn-outline-danger mx-1 p-1" } %>
+    <div class="col-2 d-flex align-items-bottom">  <%# Holds only Delete button %>
+      <div class="row mx-auto mt-auto">
+        <%= link_to_remove_association "Delete", f, { class: "btn btn-outline-danger py-0" } %>
       </div>
     </div>
   </div>

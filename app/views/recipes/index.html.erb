@@ -1,22 +1,24 @@
 <div class="display-6">Your Recipe Shelf</div>
 <hr>
 
-<div id="recipe-index-top-controls">
-  <div class="row">
-    <div class="col-8"><%= render "recipes/index/search_bar" if current_user.recipes.any? %></div>
-    <div class="col-4">
-      <%= 
-        link_to "Add a new recipe",
-        new_recipe_path,
-        { id: "btn-primary-sage", class: "btn my-4" }
-      %>
-    </div>
-</div>
+<div id="recipe-index-body" class="my-4">
+  <div id="recipe-index-top-controls">
+    <div class="row">
+      <div class="col-8"><%= render "recipes/index/search_bar" if current_user.recipes.any? %></div>
+      <div class="col-4">
+        <%= 
+          link_to "Add a new recipe",
+          new_recipe_path,
+          { id: "btn-primary-sage", class: "btn" }
+        %>
+      </div>
+  </div>
 
-<%= render "recipes/index/recipe_list", recipes: @recipes %>
+  <%= render "recipes/index/recipe_list", recipes: @recipes %>
 
-<div id="recipe-index-bottom-controls" class="my-4">
-  <% if params[:q].present? %>
-    <br><%= link_to "<< Back to all recipes", recipes_path %>
-  <% end %>
+  <div id="recipe-index-bottom-controls" class="my-4">
+    <% if params[:q].present? %>
+      <br><%= link_to "<< Back to all recipes", recipes_path %>
+    <% end %>
+  </div>
 </div>

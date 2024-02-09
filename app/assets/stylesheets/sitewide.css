@@ -1,14 +1,22 @@
 @import url("color_palette.css");
 
 
+/* Body */
+
 #sitewide-body {
     background: var(--background_color);
     color: var(--font-color);
 }
 
+
+/* Navbar */
+
 #sitewide-navbar {
     background: var(--primary_color);
 }
+
+
+/* Buttons */
 
 #btn-primary-sage {
     background-color: var(--secondary_color);

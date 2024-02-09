@@ -39,14 +39,14 @@
 
     <div id="form-ingredients" class="my-4">
       <div id="ingredient-container" class="container">
-        <%= form.label :ingredients, id: "ingredient-section-label", style: "display:block" %>
+        <%= form.label :ingredients, { id: "ingredient-section-label" } %>
         <% first_row = true %>
         <%= form.fields_for :ingredients do |ingredient_form| %>
           <%= render "ingredient_fields", f: ingredient_form, first_row: first_row %>
           <% first_row = false %>
         <% end %>
         <div id="links">
-          <%= link_to_add_association 'Add Ingredient', form, :ingredients, { id: "btn-outline-sage", class: "btn" } %>
+          <%= link_to_add_association 'Add another', form, :ingredients, { id: "btn-outline-sage", class: "btn" } %>
         </div>
       </div>
     </div>

@@ -17,3 +17,7 @@
 #recipe-form #ingredient-section-label {
     margin-left: -0.75em;
 }
+
+#recipe-form #ingredient-fields .label {
+    font-size: 80%;
+}
