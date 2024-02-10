@@ -1,5 +1,11 @@
 @import url("color_palette.css");
 
+
+#recipe-form {
+    position: relative;
+}
+
+
 #recipe-form .form-control {
     box-shadow: none;
 }
@@ -20,4 +26,10 @@
 
 #recipe-form #ingredient-fields .label {
     font-size: 80%;
+}
+
+#recipe-form #recipe-delete-button { /* Affix delete button to bottom-right of form */
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
