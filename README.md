@@ -1,24 +1,7 @@
-# README
+# Food Sage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Food Sage is the wiser way to eat, enabling you to eat the way you want: more, less, cheaper, greener, or more adventurously.
 
-Things you may want to cover:
+In its current form, it is a web app enabling you to save and share your favorite recipes.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In the future, it will also support the ability to construct meal plans, generate grocery lists for those meal plans, and approximate the calorie counts and macros of recipes and meal plans.
